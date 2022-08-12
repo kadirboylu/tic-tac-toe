@@ -10,14 +10,14 @@ import Info from "../Info/Info";
 
 // Game Winning Conditions
 const winConditions = [
+  [0, 4, 8],
+  [2, 4, 6],
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6],
 ];
 
 const Board = () => {
@@ -36,7 +36,8 @@ const Board = () => {
           return { letter: board[a], indexes: conditions[i] };
         }
         // If there is no empty square and winner = null -> result: draw
-        if (!board.includes("")) {
+        // There is a chance that the diagonals will match when all squares are filled. If we don't add the i > 1 condition, the result may look like a draw even if the diagonals match.
+        if (!board.includes("") && i > 1) {
           return { draw: "DRAW!" };
         }
       }
