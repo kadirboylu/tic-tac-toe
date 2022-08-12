@@ -21,3 +21,11 @@
 .scoreY {
   @apply text-blue-500;
 }
+
+.win {
+  @apply bg-green-500;
+}
+
+.draw {
+  @apply bg-yellow-500;
+}

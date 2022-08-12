@@ -13,3 +13,11 @@
 .info {
   @apply grid grid-cols-1 absolute z-10 -top-1 -left-1;
 }
+
+.win {
+  @apply bg-green-800 border-green-800;
+}
+
+.draw {
+  @apply bg-yellow-500 border-yellow-500;
+}
