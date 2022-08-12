@@ -1,19 +1,23 @@
 .scores {
-  @apply w-[248px] rounded-md bg-zinc-50 flex justify-between shadow-md text-center;
+  @apply w-[255px] p-1 bg-white rounded-sm grid grid-cols-2 gap-2 transition-all duration-500 shadow-md text-center;
+}
+
+.turnX {
+  @apply bg-red-500;
+}
+
+.turnO {
+  @apply bg-blue-500;
 }
 
 .score {
-  @apply font-bold p-2;
-}
-
-.score:first-child {
-  @apply border-r-2 border-red-500;
+  @apply font-bold p-2 bg-white rounded-sm;
 }
 
 .scoreX {
-  @apply text-red-500 flex-1;
+  @apply text-red-500;
 }
 
 .scoreY {
-  @apply text-blue-500 flex-1;
+  @apply text-blue-500;
 }

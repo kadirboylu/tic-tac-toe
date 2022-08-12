@@ -6,18 +6,29 @@ import BoardCSS from "./Board.module.css";
 // Components
 import Scores from "../Scores/Score";
 import Square from "../Square/Square";
-import Info from "../Info/Info";
 
 const Board = () => {
-  const [board, setBoard] = useState(Array(9).fill(""));
+  const [board, setBoard] = useState(Array(9).fill("")); // Board State
+  const [turn, setTurn] = useState("X"); // Turn State
 
   return (
     <div>
-      <Scores />
-      <div className={BoardCSS.board}>
+      <Scores turn={turn} />
+      <div
+        className={`${BoardCSS.board} ${
+          turn === "X" ? BoardCSS.turnX : turn === "O" ? BoardCSS.turnO : ""
+        }`}
+      >
         {board.map((_, index) => {
           return (
-            <Square key={index} num={index} board={board} setBoard={setBoard} />
+            <Square
+              key={index}
+              num={index}
+              board={board}
+              setBoard={setBoard}
+              turn={turn}
+              setTurn={setTurn}
+            />
           );
         })}
       </div>

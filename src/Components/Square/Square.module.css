@@ -1,9 +1,21 @@
 .square {
   font-family: "Fredoka One", cursive;
 
-  @apply w-20 h-20 text-3xl bg-zinc-50 font-bold text-red-500 flex items-center justify-center cursor-pointer border-l-2 border-b-2;
+  @apply w-20 h-20 text-3xl rounded-sm transition-colors duration-300 bg-zinc-50 font-bold text-red-500 flex items-center justify-center  cursor-pointer;
 }
 
 .square:hover {
   @apply bg-zinc-200;
+}
+
+.squareX:hover {
+  @apply bg-red-500 text-white;
+}
+
+.squareO {
+  @apply text-blue-500;
+}
+
+.squareO:hover {
+  @apply bg-blue-500 text-white;
 }
