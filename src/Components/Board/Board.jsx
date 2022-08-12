@@ -37,7 +37,7 @@ const Board = () => {
         }
         // If there is no empty square and winner = null -> result: draw
         if (!board.includes("")) {
-          return { draw: "The game ended in a draw." };
+          return { draw: "DRAW!" };
         }
       }
 
@@ -84,7 +84,12 @@ const Board = () => {
 
         {winner && (
           <div className={BoardCSS.info}>
-            <Info winner={winner} setWinner={setWinner} setBoard={setBoard} />
+            <Info
+              winner={winner}
+              setWinner={setWinner}
+              setBoard={setBoard}
+              setTurn={setTurn}
+            />
           </div>
         )}
       </div>

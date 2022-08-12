@@ -1,5 +1,9 @@
 .info {
-  @apply w-[256px] h-[256px] bg-green-400 opacity-70 text-center font-bold text-red-500 absolute z-0;
+  @apply w-[256px] h-[256px] rounded-sm bg-green-200 opacity-70 text-center font-bold text-red-500 absolute;
+}
+
+.draw {
+  @apply bg-yellow-200;
 }
 
 .result {
@@ -11,13 +15,13 @@
 }
 
 .result button {
-  @apply p-2 bg-blue-500 transition-all duration-300 rounded-md text-white;
+  @apply p-2 bg-green-600 transition-all  duration-300 rounded-md text-white;
 }
 
 .result button:hover {
-  @apply bg-blue-600;
+  @apply bg-green-700;
 }
 
 .result button:active {
-  @apply bg-blue-700 translate-y-[1px];
+  @apply bg-green-800 translate-y-[1px];
 }
