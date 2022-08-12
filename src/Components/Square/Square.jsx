@@ -4,9 +4,13 @@ import React from "react";
 import SquareCSS from "./Square.module.css";
 
 const Square = ({ num, board, setBoard, turn, setTurn, winner }) => {
+  const winnerStyles = (() => {
+    if (winner?.letter && winner.indexes.includes(num)) return "winner";
+  })();
+
   const handleClick = () => {
     // If the content of the square is X or O, the following operations will not occur.
-    if (board[num] !== "") return;
+    if (board[num] !== "" || winner) return;
 
     let squares = [...board];
 
@@ -27,15 +31,23 @@ const Square = ({ num, board, setBoard, turn, setTurn, winner }) => {
     setBoard(squares);
   };
 
+  // if square includes "X" -> bg-color: red, if square includes "O" -> bg-color: blue else ""
+  const squareStyle = () => {
+    return board[num] === "X"
+      ? SquareCSS.squareX
+      : board[num] === "O"
+      ? SquareCSS.squareO
+      : "";
+  };
+
+  // If square is winner square -> bg-color: green else ""
+  const winnerSquares = () => {
+    return winnerStyles === "winner" ? SquareCSS.squareWinner : "";
+  };
+
   return (
     <div
-      className={`${SquareCSS.square} ${
-        board[num] === "X"
-          ? SquareCSS.squareX
-          : board[num] === "O"
-          ? SquareCSS.squareO
-          : ""
-      }`}
+      className={`${SquareCSS.square} ${squareStyle()} ${winnerSquares()}`}
       onClick={() => handleClick()}
     >
       {board[num]}

@@ -1,3 +1,23 @@
 .info {
-  @apply w-[248px] text-center font-bold text-red-500;
+  @apply w-[256px] h-[256px] bg-green-400 opacity-70 text-center font-bold text-red-500 absolute z-0;
+}
+
+.result {
+  @apply w-[256px] h-[256px] text-black flex flex-col items-center justify-between px-2 py-12 z-10;
+}
+
+.result p {
+  @apply text-2xl text-center;
+}
+
+.result button {
+  @apply p-2 bg-blue-500 transition-all duration-300 rounded-md text-white;
+}
+
+.result button:hover {
+  @apply bg-blue-600;
+}
+
+.result button:active {
+  @apply bg-blue-700 translate-y-[1px];
 }

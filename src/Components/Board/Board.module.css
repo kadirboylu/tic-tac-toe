@@ -1,5 +1,5 @@
 .board {
-  @apply grid grid-cols-3 gap-1 rounded-sm bg-zinc-200 transition-all duration-500 my-5;
+  @apply grid grid-cols-3 gap-1 rounded-sm bg-zinc-200 border-4 transition-all duration-500 my-5 relative;
 }
 
 .turnX {
@@ -8,4 +8,8 @@
 
 .turnO {
   @apply bg-blue-500 border-4 border-blue-500;
+}
+
+.info {
+  @apply grid grid-cols-1 absolute z-10 -top-1 -left-1;
 }
