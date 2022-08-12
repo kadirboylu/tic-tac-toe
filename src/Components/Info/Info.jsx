@@ -1,7 +1,10 @@
 import React from "react";
 
+// CSS
+import InfoCSS from "./Info.module.css";
+
 const Info = () => {
-  return <div>Info</div>;
+  return <div className={InfoCSS.info}>Turn: X</div>;
 };
 
 export default Info;

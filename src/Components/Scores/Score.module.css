@@ -1,0 +1,19 @@
+.scores {
+  @apply w-[248px] rounded-md bg-zinc-50 flex justify-between shadow-md text-center;
+}
+
+.score {
+  @apply font-bold p-2;
+}
+
+.score:first-child {
+  @apply border-r-2 border-red-500;
+}
+
+.scoreX {
+  @apply text-red-500 flex-1;
+}
+
+.scoreY {
+  @apply text-blue-500 flex-1;
+}

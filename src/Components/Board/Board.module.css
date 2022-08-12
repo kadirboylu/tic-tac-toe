@@ -1,0 +1,3 @@
+.board {
+  @apply grid grid-cols-3 border-4 border-red-500 my-5;
+}
