@@ -63,8 +63,10 @@ const Board = () => {
 
   return (
     <div>
+      {/* -- SCORES --  */}
       <Scores turn={turn} winner={winner} />
       <div className={`${BoardCSS.board} ${turnStyle()} ${winnerStyle()}`}>
+        {/* -- GAME BOARD -- */}
         {board.map((_, index) => {
           return (
             <Square
@@ -78,7 +80,7 @@ const Board = () => {
             />
           );
         })}
-
+        {/* -- RESULT -- */}
         {winner && (
           <div className={BoardCSS.info}>
             <Info

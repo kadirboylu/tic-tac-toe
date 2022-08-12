@@ -1,27 +1,23 @@
 .info {
-  @apply w-[256px] h-[256px] rounded-sm bg-green-200 opacity-70 text-center font-bold text-red-500 absolute;
+  @apply w-[256px] h-[256px] rounded-sm bg-green-200 bg-opacity-70 text-center  text-black flex flex-col items-center justify-between px-2 py-12;
 }
 
 .draw {
-  @apply bg-yellow-200;
+  @apply bg-yellow-200 bg-opacity-70;
 }
 
-.result {
-  @apply w-[256px] h-[256px] text-black flex flex-col items-center justify-between px-2 py-12 z-10;
-}
-
-.result p {
+.info p {
   @apply text-2xl text-center;
 }
 
-.result button {
-  @apply p-2 bg-green-600 transition-all  duration-300 rounded-md text-white;
+.info button {
+  @apply p-2 bg-green-600 transition-all duration-300 rounded-md text-white;
 }
 
-.result button:hover {
+.info button:hover {
   @apply bg-green-700;
 }
 
-.result button:active {
+.info button:active {
   @apply bg-green-800 translate-y-[1px];
 }

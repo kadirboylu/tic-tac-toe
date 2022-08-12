@@ -4,6 +4,7 @@ import React from "react";
 import InfoCSS from "./Info.module.css";
 
 const Info = ({ winner, setWinner, setBoard, setTurn }) => {
+  // Game Reset
   const handleClick = () => {
     setWinner(null);
     setBoard(Array(9).fill(""));
@@ -11,23 +12,19 @@ const Info = ({ winner, setWinner, setBoard, setTurn }) => {
   };
 
   return (
-    <>
-      <div className="relative">
-        <div
-          className={`${InfoCSS.info} ${winner?.draw && InfoCSS.draw}`}
-        ></div>
-      </div>
-      <div className={InfoCSS.result}>
-        {winner?.letter ? (
+    <div className={`${InfoCSS.info} ${winner?.draw && InfoCSS.draw}`}>
+      {
+        //if winner.letter = true -> result X or O won, if winner.draw = true -> result DRAW
+        winner?.letter ? (
           <p>{winner.letter} WON!</p>
         ) : winner?.draw ? (
           <p>{winner.draw}</p>
         ) : (
           ""
-        )}
-        <button onClick={() => handleClick()}>RESTART</button>
-      </div>
-    </>
+        )
+      }
+      <button onClick={() => handleClick()}>RESTART</button>
+    </div>
   );
 };
 
