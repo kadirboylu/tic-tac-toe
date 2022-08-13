@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import BoardCSS from "./Board.module.css";
 
 // Components
-import Scores from "../Scores/Score";
+import Scores from "../Score/Score";
 import Square from "../Square/Square";
 import Info from "../Info/Info";
 
@@ -24,6 +24,8 @@ const Board = () => {
   const [board, setBoard] = useState(Array(9).fill("")); // Board State
   const [turn, setTurn] = useState("X"); // Turn State
   const [winner, setWinner] = useState(null); // Winner status
+  const [scoreX, setScoreX] = useState(0); // Score X
+  const [scoreO, setScoreO] = useState(0); // Score Y
 
   // Check Winner
   useEffect(() => {
@@ -33,6 +35,10 @@ const Board = () => {
         const [a, b, c] = conditions[i];
         // Returns the winner if the squares are not equal to the empty string and the squares are equal.
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+          board[a] === "X"
+            ? setScoreX((scoreX) => scoreX + 1)
+            : setScoreO((scoreO) => scoreO + 1);
+
           return { letter: board[a], indexes: conditions[i] };
         }
         // If there is no empty square and winner = null -> result: draw
@@ -64,7 +70,7 @@ const Board = () => {
   return (
     <div>
       {/* -- SCORES --  */}
-      <Scores turn={turn} winner={winner} />
+      <Scores turn={turn} winner={winner} scoreX={scoreX} scoreO={scoreO} />
       <div className={`${BoardCSS.board} ${turnStyle()} ${winnerStyle()}`}>
         {/* -- GAME BOARD -- */}
         {board.map((_, index) => {

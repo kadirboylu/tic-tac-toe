@@ -3,7 +3,7 @@ import React from "react";
 // CSS
 import ScoreCSS from "./Score.module.css";
 
-const Score = ({ turn, winner }) => {
+const Score = ({ turn, winner, scoreX, scoreO }) => {
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
   const turnStyle = () => {
     return turn === "X" ? ScoreCSS.turnX : turn === "O" ? ScoreCSS.turnO : "";
@@ -16,8 +16,12 @@ const Score = ({ turn, winner }) => {
 
   return (
     <div className={`${ScoreCSS.scores} ${turnStyle()} ${winnerStyle()}`}>
-      <div className={`${ScoreCSS.scoreX} ${ScoreCSS.score} `}>X - 1</div>
-      <div className={`${ScoreCSS.scoreY} ${ScoreCSS.score} `}>O - 1</div>
+      <div className={`${ScoreCSS.scoreX} ${ScoreCSS.score} `}>
+        X - {scoreX}
+      </div>
+      <div className={`${ScoreCSS.scoreY} ${ScoreCSS.score} `}>
+        O - {scoreO}
+      </div>
     </div>
   );
 };
