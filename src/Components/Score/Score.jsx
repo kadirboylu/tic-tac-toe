@@ -6,7 +6,10 @@ import ScoreCSS from "./Score.module.css";
 const Score = ({ turn, winner, scoreX, scoreO }) => {
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
   const turnStyle = () => {
-    return turn === "X" ? ScoreCSS.turnX : turn === "O" ? ScoreCSS.turnO : "";
+    return (
+      winner === null &&
+      (turn === "X" ? ScoreCSS.turnX : turn === "O" ? ScoreCSS.turnO : "")
+    );
   };
 
   // if winner = true -> bg and border color = green, if draw = true -> bg and border color=yellow else ""
@@ -15,11 +18,19 @@ const Score = ({ turn, winner, scoreX, scoreO }) => {
   };
 
   return (
-    <div className={`${ScoreCSS.scores} ${turnStyle()} ${winnerStyle()}`}>
-      <div className={`${ScoreCSS.scoreX} ${ScoreCSS.score} `}>
+    <div className={`${ScoreCSS.scores} ${winner?.draw && winnerStyle()}`}>
+      <div
+        className={`${ScoreCSS.scoreX} ${ScoreCSS.score} ${
+          winner?.letter === "X" && winnerStyle()
+        } ${turn === "X" && turnStyle()}`}
+      >
         X - {scoreX}
       </div>
-      <div className={`${ScoreCSS.scoreY} ${ScoreCSS.score} `}>
+      <div
+        className={`${ScoreCSS.scoreY} ${ScoreCSS.score} ${
+          winner?.letter === "O" && winnerStyle()
+        } ${turn === "O" && turnStyle()}`}
+      >
         O - {scoreO}
       </div>
     </div>

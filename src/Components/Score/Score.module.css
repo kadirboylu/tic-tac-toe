@@ -2,16 +2,8 @@
   @apply w-[255px] p-1 bg-white rounded-sm grid grid-cols-2 gap-2 transition-all duration-500 shadow-md text-center;
 }
 
-.turnX {
-  @apply bg-red-500;
-}
-
-.turnO {
-  @apply bg-blue-500;
-}
-
 .score {
-  @apply font-bold p-2 bg-white rounded-sm;
+  @apply font-bold p-2 transition-all duration-500 bg-white rounded-sm;
 }
 
 .scoreX {
@@ -22,8 +14,16 @@
   @apply text-blue-500;
 }
 
+.turnX {
+  @apply bg-red-500 text-white;
+}
+
+.turnO {
+  @apply bg-blue-500 text-white;
+}
+
 .win {
-  @apply bg-green-500;
+  @apply bg-green-500 text-white;
 }
 
 .draw {
