@@ -1,5 +1,5 @@
 .scores {
-  @apply w-[255px] p-1 bg-white rounded-sm grid grid-cols-2 gap-2 transition-all duration-500 shadow-md text-center;
+  @apply w-[255px] p-1 bg-white rounded-sm grid grid-cols-2 gap-2 transition-all mb-8 duration-500 shadow-2xl text-center;
 }
 
 .score {
