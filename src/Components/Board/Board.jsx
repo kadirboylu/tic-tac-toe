@@ -42,8 +42,8 @@ const Board = () => {
           return { letter: board[a], indexes: conditions[i] };
         }
         // If there is no empty square and winner = null -> result: draw
-        // There is a chance that the diagonals will match when all squares are filled. If we don't add the i > 1 condition, the result may look like a draw even if the diagonals match.
-        if (!board.includes("") && i > 1) {
+        // i === 7 is must because we will check the conditions first
+        if (!board.includes("") && i === 7) {
           return { draw: "DRAW!" };
         }
       }
