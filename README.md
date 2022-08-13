@@ -1,8 +1,10 @@
 # Tic-Tac-Toe
 
-A Tic-Tac-Toe game built with React.
+A Tic-Tac-Toe game built with React and styled with Tailwind CSS.
 
 [See Demo App on Netlify](https://fimple-case-xox.netlify.app/)
+
+![tic-tac-toe](https://raw.githubusercontent.com/kadirboylu/tic-tac-toe/master/screenshots/tic-tac-toe.gif)</div>
 
 ## Usage
 
