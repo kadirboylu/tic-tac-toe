@@ -1,9 +1,14 @@
 import React from "react";
 
+// Context
+import { useGameContext } from "../../Contexts/GameContext";
+
 // CSS
 import ScoreCSS from "./Score.module.css";
 
-const Score = ({ turn, winner, scoreX, scoreO }) => {
+const Score = () => {
+  const { turn, winner, scoreX, scoreO } = useGameContext();
+
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
   const turnStyle = () => {
     return (

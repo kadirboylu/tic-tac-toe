@@ -1,9 +1,14 @@
 import React from "react";
 
+// Context
+import { useGameContext } from "../../Contexts/GameContext";
+
 // CSS
 import SquareCSS from "./Square.module.css";
 
-const Square = ({ num, board, setBoard, turn, setTurn, winner }) => {
+const Square = ({ num }) => {
+  const { board, setBoard, turn, setTurn, winner } = useGameContext();
+
   const winnerStyles = (() => {
     if (winner?.letter && winner.indexes.includes(num)) return "winner";
   })();

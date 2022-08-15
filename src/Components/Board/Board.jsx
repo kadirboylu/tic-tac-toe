@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+// Contexts
+import { GameContext } from "../../Contexts/GameContext";
+
 // CSS
 import BoardCSS from "./Board.module.css";
 
@@ -68,37 +71,32 @@ const Board = () => {
   };
 
   return (
-    <div>
-      {/* -- SCORES --  */}
-      <Scores turn={turn} winner={winner} scoreX={scoreX} scoreO={scoreO} />
+    <GameContext.Provider
+      value={{
+        board,
+        setBoard,
+        turn,
+        setTurn,
+        winner,
+        setWinner,
+        scoreX,
+        setScoreX,
+        scoreO,
+        setScoreO,
+      }}
+    >
+      <Scores />
       <div className={`${BoardCSS.board} ${turnStyle()} ${winnerStyle()}`}>
-        {/* -- GAME BOARD -- */}
         {board.map((_, index) => {
-          return (
-            <Square
-              key={index}
-              num={index}
-              board={board}
-              setBoard={setBoard}
-              turn={turn}
-              setTurn={setTurn}
-              winner={winner}
-            />
-          );
+          return <Square key={index} num={index} />;
         })}
-        {/* -- RESULT -- */}
         {winner && (
           <div className={BoardCSS.info}>
-            <Info
-              winner={winner}
-              setWinner={setWinner}
-              setBoard={setBoard}
-              setTurn={setTurn}
-            />
+            <Info />
           </div>
         )}
       </div>
-    </div>
+    </GameContext.Provider>
   );
 };
 

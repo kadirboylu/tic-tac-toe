@@ -1,9 +1,14 @@
 import React from "react";
 
+// Context
+import { useGameContext } from "../../Contexts/GameContext";
+
 // CSS
 import InfoCSS from "./Info.module.css";
 
-const Info = ({ winner, setWinner, setBoard, setTurn }) => {
+const Info = () => {
+  const { winner, setWinner, setBoard, setTurn } = useGameContext();
+
   // Game Reset
   const handleClick = () => {
     setWinner(null);
