@@ -1,6 +1,6 @@
 import React from "react";
 import { useGameContext } from "../../Contexts/GameContext";
-import InfoCSS from "./Info.module.css";
+import styles from "./Info.module.css";
 
 const Info = () => {
   const { winner, setWinner, setBoard, setTurn } = useGameContext();
@@ -13,7 +13,7 @@ const Info = () => {
   };
 
   return (
-    <div className={`${InfoCSS.info} ${winner?.draw && InfoCSS.draw}`}>
+    <div className={`${styles.info} ${winner?.draw && styles.draw}`}>
       {
         //if winner.letter = true -> result X or O won, if winner.draw = true -> result DRAW
         winner?.letter ? (

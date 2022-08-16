@@ -1,6 +1,6 @@
 import React from "react";
 import { useGameContext } from "../../Contexts/GameContext";
-import ScoreCSS from "./Score.module.css";
+import styles from "./Score.module.css";
 
 const Score = () => {
   const { turn, winner, scoreX, scoreO } = useGameContext();
@@ -9,26 +9,26 @@ const Score = () => {
   const turnStyles = (() => {
     return (
       winner === null &&
-      (turn === "X" ? ScoreCSS.turnX : turn === "O" ? ScoreCSS.turnO : "")
+      (turn === "X" ? styles.turnX : turn === "O" ? styles.turnO : "")
     );
   })();
 
   // if winner = true -> bg and border color = green, if draw = true -> bg and border color=yellow else ""
   const winnerStyles = (() => {
-    return winner?.letter ? ScoreCSS.win : winner?.draw ? ScoreCSS.draw : "";
+    return winner?.letter ? styles.win : winner?.draw ? styles.draw : "";
   })();
 
   return (
-    <div className={`${ScoreCSS.scores} ${winner?.draw && winnerStyles}`}>
+    <div className={`${styles.scores} ${winner?.draw && winnerStyles}`}>
       <div
-        className={`${ScoreCSS.scoreX} ${ScoreCSS.score} ${
+        className={`${styles.scoreX} ${styles.score} ${
           winner?.letter === "X" && winnerStyles
         } ${turn === "X" && turnStyles}`}
       >
         X - {scoreX}
       </div>
       <div
-        className={`${ScoreCSS.scoreY} ${ScoreCSS.score} ${
+        className={`${styles.scoreY} ${styles.score} ${
           winner?.letter === "O" && winnerStyles
         } ${turn === "O" && turnStyles}`}
       >

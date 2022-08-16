@@ -1,6 +1,6 @@
 import React from "react";
 import { useGameContext } from "../../Contexts/GameContext";
-import SquareCSS from "./Square.module.css";
+import styles from "./Square.module.css";
 
 const Square = ({ num }) => {
   const { board, setBoard, turn, setTurn, winner } = useGameContext();
@@ -35,20 +35,20 @@ const Square = ({ num }) => {
   // if square includes "X" -> bg-color: red, if square includes "O" -> bg-color: blue else ""
   const squareStyle = () => {
     return board[num] === "X"
-      ? SquareCSS.squareX
+      ? styles.squareX
       : board[num] === "O"
-      ? SquareCSS.squareO
+      ? styles.squareO
       : "";
   };
 
   // If square is winner square -> bg-color: green else ""
   const winnerSquares = () => {
-    return winnerStyles === "winner" ? SquareCSS.squareWinner : "";
+    return winnerStyles === "winner" ? styles.squareWinner : "";
   };
 
   return (
     <div
-      className={`${SquareCSS.square} ${squareStyle()} ${winnerSquares()}`}
+      className={`${styles.square} ${squareStyle()} ${winnerSquares()}`}
       onClick={() => handleClick()}
     >
       {board[num]}

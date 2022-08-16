@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GameContext } from "../../Contexts/GameContext";
-import BoardCSS from "./Board.module.css";
+import styles from "./Board.module.css";
 import Scores from "../Score/Score";
 import Square from "../Square/Square";
 import Info from "../Info/Info";
@@ -55,13 +55,13 @@ const Board = () => {
   const turnStyles = (() => {
     return (
       winner === null &&
-      (turn === "X" ? BoardCSS.turnX : turn === "O" ? BoardCSS.turnO : "")
+      (turn === "X" ? styles.turnX : turn === "O" ? styles.turnO : "")
     );
   })();
 
   // if winner = X -> bg-color=red, if winner = O -> bg-color=blue else ""
   const winnerStyles = (() => {
-    return winner?.letter ? BoardCSS.win : winner?.draw ? BoardCSS.draw : "";
+    return winner?.letter ? styles.win : winner?.draw ? styles.draw : "";
   })();
 
   return (
@@ -80,12 +80,12 @@ const Board = () => {
       }}
     >
       <Scores />
-      <div className={`${BoardCSS.board} ${turnStyles} ${winnerStyles}`}>
+      <div className={`${styles.board} ${turnStyles} ${winnerStyles}`}>
         {board.map((_, index) => {
           return <Square key={index} num={index} />;
         })}
         {winner && (
-          <div className={BoardCSS.info}>
+          <div className={styles.info}>
             <Info />
           </div>
         )}
