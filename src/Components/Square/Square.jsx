@@ -1,9 +1,5 @@
 import React from "react";
-
-// Context
 import { useGameContext } from "../../Contexts/GameContext";
-
-// CSS
 import SquareCSS from "./Square.module.css";
 
 const Square = ({ num }) => {

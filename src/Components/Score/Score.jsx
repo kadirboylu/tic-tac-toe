@@ -1,9 +1,5 @@
 import React from "react";
-
-// Context
 import { useGameContext } from "../../Contexts/GameContext";
-
-// CSS
 import ScoreCSS from "./Score.module.css";
 
 const Score = () => {

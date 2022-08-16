@@ -1,9 +1,5 @@
 import React from "react";
-
-// Context
 import { useGameContext } from "../../Contexts/GameContext";
-
-// CSS
 import InfoCSS from "./Info.module.css";
 
 const Info = () => {

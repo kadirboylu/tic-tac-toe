@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-// Contexts
 import { GameContext } from "../../Contexts/GameContext";
-
-// CSS
 import BoardCSS from "./Board.module.css";
-
-// Components
 import Scores from "../Score/Score";
 import Square from "../Square/Square";
 import Info from "../Info/Info";
@@ -24,11 +18,11 @@ const winConditions = [
 ];
 
 const Board = () => {
-  const [board, setBoard] = useState(Array(9).fill("")); // Board State
-  const [turn, setTurn] = useState("X"); // Turn State
-  const [winner, setWinner] = useState(null); // Winner status
-  const [scoreX, setScoreX] = useState(0); // Score X
-  const [scoreO, setScoreO] = useState(0); // Score Y
+  const [board, setBoard] = useState(Array(9).fill(""));
+  const [turn, setTurn] = useState("X");
+  const [winner, setWinner] = useState(null);
+  const [scoreX, setScoreX] = useState(0);
+  const [scoreO, setScoreO] = useState(0);
 
   // Check Winner
   useEffect(() => {
