@@ -10,7 +10,7 @@ const Score = () => {
   const { turn, winner, scoreX, scoreO } = useGameContext();
 
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
-  const turnStyle = (() => {
+  const turnStyles = (() => {
     return (
       winner === null &&
       (turn === "X" ? ScoreCSS.turnX : turn === "O" ? ScoreCSS.turnO : "")
@@ -18,23 +18,23 @@ const Score = () => {
   })();
 
   // if winner = true -> bg and border color = green, if draw = true -> bg and border color=yellow else ""
-  const winnerStyle = (() => {
+  const winnerStyles = (() => {
     return winner?.letter ? ScoreCSS.win : winner?.draw ? ScoreCSS.draw : "";
   })();
 
   return (
-    <div className={`${ScoreCSS.scores} ${winner?.draw && winnerStyle}`}>
+    <div className={`${ScoreCSS.scores} ${winner?.draw && winnerStyles}`}>
       <div
         className={`${ScoreCSS.scoreX} ${ScoreCSS.score} ${
-          winner?.letter === "X" && winnerStyle
-        } ${turn === "X" && turnStyle}`}
+          winner?.letter === "X" && winnerStyles
+        } ${turn === "X" && turnStyles}`}
       >
         X - {scoreX}
       </div>
       <div
         className={`${ScoreCSS.scoreY} ${ScoreCSS.score} ${
-          winner?.letter === "O" && winnerStyle
-        } ${turn === "O" && turnStyle}`}
+          winner?.letter === "O" && winnerStyles
+        } ${turn === "O" && turnStyles}`}
       >
         O - {scoreO}
       </div>

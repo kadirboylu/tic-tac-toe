@@ -58,7 +58,7 @@ const Board = () => {
   }, [board]);
 
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
-  const turnStyle = (() => {
+  const turnStyles = (() => {
     return (
       winner === null &&
       (turn === "X" ? BoardCSS.turnX : turn === "O" ? BoardCSS.turnO : "")
@@ -66,7 +66,7 @@ const Board = () => {
   })();
 
   // if winner = X -> bg-color=red, if winner = O -> bg-color=blue else ""
-  const winnerStyle = (() => {
+  const winnerStyles = (() => {
     return winner?.letter ? BoardCSS.win : winner?.draw ? BoardCSS.draw : "";
   })();
 
@@ -86,7 +86,7 @@ const Board = () => {
       }}
     >
       <Scores />
-      <div className={`${BoardCSS.board} ${turnStyle} ${winnerStyle}`}>
+      <div className={`${BoardCSS.board} ${turnStyles} ${winnerStyles}`}>
         {board.map((_, index) => {
           return <Square key={index} num={index} />;
         })}
