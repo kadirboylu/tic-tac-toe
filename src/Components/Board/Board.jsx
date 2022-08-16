@@ -58,17 +58,17 @@ const Board = () => {
   }, [board]);
 
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
-  const turnStyle = () => {
+  const turnStyle = (() => {
     return (
       winner === null &&
       (turn === "X" ? BoardCSS.turnX : turn === "O" ? BoardCSS.turnO : "")
     );
-  };
+  })();
 
   // if winner = X -> bg-color=red, if winner = O -> bg-color=blue else ""
-  const winnerStyle = () => {
+  const winnerStyle = (() => {
     return winner?.letter ? BoardCSS.win : winner?.draw ? BoardCSS.draw : "";
-  };
+  })();
 
   return (
     <GameContext.Provider
@@ -86,7 +86,7 @@ const Board = () => {
       }}
     >
       <Scores />
-      <div className={`${BoardCSS.board} ${turnStyle()} ${winnerStyle()}`}>
+      <div className={`${BoardCSS.board} ${turnStyle} ${winnerStyle}`}>
         {board.map((_, index) => {
           return <Square key={index} num={index} />;
         })}
