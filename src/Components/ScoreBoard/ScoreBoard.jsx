@@ -3,7 +3,7 @@ import { useGameContext } from "@contexts/GameContext";
 import styles from "./ScoreBoard.module.css";
 
 const ScoreBoard = () => {
-  const { turn, winner, scoreX, scoreO } = useGameContext();
+  const { turn, winner, score } = useGameContext();
 
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
   const turnStyles = (() => {
@@ -25,14 +25,14 @@ const ScoreBoard = () => {
           winner?.player === "X" && winnerStyles
         } ${turn === "X" && turnStyles}`}
       >
-        X - {scoreX}
+        X - {score.X}
       </div>
       <div
         className={`${styles.scoreY} ${styles.score} ${
           winner?.player === "O" && winnerStyles
         } ${turn === "O" && turnStyles}`}
       >
-        O - {scoreO}
+        O - {score.O}
       </div>
     </div>
   );

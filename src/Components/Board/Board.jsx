@@ -21,8 +21,7 @@ const Board = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
   const [turn, setTurn] = useState("X");
   const [winner, setWinner] = useState(null);
-  const [scoreX, setScoreX] = useState(0);
-  const [scoreO, setScoreO] = useState(0);
+  const [score, setScore] = useState({ X: 0, O: 0 });
 
   // Check Winner
   useEffect(() => {
@@ -33,8 +32,8 @@ const Board = () => {
         // Returns the winner if the squares are not equal to the empty string and the squares are equal.
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
           board[a] === "X"
-            ? setScoreX((scoreX) => scoreX + 1)
-            : setScoreO((scoreO) => scoreO + 1);
+            ? setScore((score) => ({ ...score, X: score.X + 1 }))
+            : setScore((score) => ({ ...score, O: score.O + 1 }));
 
           return { player: board[a], squares: conditions[i] };
         }
@@ -73,10 +72,8 @@ const Board = () => {
         setTurn,
         winner,
         setWinner,
-        scoreX,
-        setScoreX,
-        scoreO,
-        setScoreO,
+        score,
+        setScore,
       }}
     >
       <ScoreBoard />
