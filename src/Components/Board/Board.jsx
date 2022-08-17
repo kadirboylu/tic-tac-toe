@@ -28,7 +28,7 @@ const Board = () => {
   useEffect(() => {
     const checkWinner = (conditions) => {
       for (let i = 0; i < conditions.length; i++) {
-        // Destructuring the winning condition
+        // Destructuring the winning condition e.g. [0, 4, 8]
         const [a, b, c] = conditions[i];
         // Returns the winner if the squares are not equal to the empty string and the squares are equal.
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
@@ -39,8 +39,8 @@ const Board = () => {
           return { player: board[a], squares: conditions[i] };
         }
         // If there is no empty square and winner = null -> result: draw
-        // i === 7 is must because we will check the conditions first
-        if (!board.includes("") && i === 7) {
+        // i === winConditions.length - 1 is must because we will check the conditions first
+        if (!board.includes("") && i === winConditions.length - 1) {
           return { result: "DRAW!" };
         }
       }
