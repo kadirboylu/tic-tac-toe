@@ -6,7 +6,7 @@ const Square = ({ num }) => {
   const { board, setBoard, turn, setTurn, winner } = useGameContext();
 
   const winnerStyles = (() => {
-    if (winner?.letter && winner.indexes.includes(num)) return "winner";
+    if (winner?.player && winner.squares.includes(num)) return "winner";
   })();
 
   const handleClick = () => {

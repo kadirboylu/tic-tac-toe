@@ -15,21 +15,21 @@ const Score = () => {
 
   // if winner = true -> bg and border color = green, if draw = true -> bg and border color=yellow else ""
   const winnerStyles = (() => {
-    return winner?.letter ? styles.win : winner?.result ? styles.draw : "";
+    return winner?.player ? styles.win : winner?.result ? styles.draw : "";
   })();
 
   return (
     <div className={`${styles.base} ${winner?.result && winnerStyles}`}>
       <div
         className={`${styles.scoreX} ${styles.score} ${
-          winner?.letter === "X" && winnerStyles
+          winner?.player === "X" && winnerStyles
         } ${turn === "X" && turnStyles}`}
       >
         X - {scoreX}
       </div>
       <div
         className={`${styles.scoreY} ${styles.score} ${
-          winner?.letter === "O" && winnerStyles
+          winner?.player === "O" && winnerStyles
         } ${turn === "O" && turnStyles}`}
       >
         O - {scoreO}

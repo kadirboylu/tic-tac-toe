@@ -15,9 +15,9 @@ const Info = () => {
   return (
     <div className={`${styles.base} ${winner?.result && styles.draw}`}>
       {
-        //if winner.letter = true -> result X or O won, if winner.result = true -> result DRAW
-        winner?.letter ? (
-          <p>{winner.letter} WON!</p>
+        //if winner.player = true -> result X or O won, if winner.result = true -> result DRAW
+        winner?.player ? (
+          <p>{winner.player} WON!</p>
         ) : winner?.result ? (
           <p>{winner.result}</p>
         ) : (

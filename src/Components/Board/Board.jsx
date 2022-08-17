@@ -36,7 +36,7 @@ const Board = () => {
             ? setScoreX((scoreX) => scoreX + 1)
             : setScoreO((scoreO) => scoreO + 1);
 
-          return { letter: board[a], indexes: conditions[i] };
+          return { player: board[a], squares: conditions[i] };
         }
         // If there is no empty square and winner = null -> result: draw
         // i === 7 is must because we will check the conditions first
@@ -61,7 +61,7 @@ const Board = () => {
 
   // if winner = X -> bg-color=red, if winner = O -> bg-color=blue else ""
   const winnerStyles = (() => {
-    return winner?.letter ? styles.win : winner?.result ? styles.draw : "";
+    return winner?.player ? styles.win : winner?.result ? styles.draw : "";
   })();
 
   return (
