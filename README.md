@@ -10,6 +10,11 @@ I used:
 - Tailwind CSS and CSS Modules
 - React Context API
 
+Packages:
+
+- [clsx](https://www.npmjs.com/package/clsx) for constructing className strings conditionally.
+- [craco](https://www.npmjs.com/package/@craco/craco) for override CRA configurations.
+
 ![tic-tac-toe](https://raw.githubusercontent.com/kadirboylu/tic-tac-toe/master/screenshots/tic-tac-toe.gif)
 
 ## Usage
