@@ -15,11 +15,11 @@ const Score = () => {
 
   // if winner = true -> bg and border color = green, if draw = true -> bg and border color=yellow else ""
   const winnerStyles = (() => {
-    return winner?.letter ? styles.win : winner?.draw ? styles.draw : "";
+    return winner?.letter ? styles.win : winner?.result ? styles.draw : "";
   })();
 
   return (
-    <div className={`${styles.base} ${winner?.draw && winnerStyles}`}>
+    <div className={`${styles.base} ${winner?.result && winnerStyles}`}>
       <div
         className={`${styles.scoreX} ${styles.score} ${
           winner?.letter === "X" && winnerStyles

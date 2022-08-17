@@ -41,7 +41,7 @@ const Board = () => {
         // If there is no empty square and winner = null -> result: draw
         // i === 7 is must because we will check the conditions first
         if (!board.includes("") && i === 7) {
-          return { draw: "DRAW!" };
+          return { result: "DRAW!" };
         }
       }
 
@@ -61,7 +61,7 @@ const Board = () => {
 
   // if winner = X -> bg-color=red, if winner = O -> bg-color=blue else ""
   const winnerStyles = (() => {
-    return winner?.letter ? styles.win : winner?.draw ? styles.draw : "";
+    return winner?.letter ? styles.win : winner?.result ? styles.draw : "";
   })();
 
   return (
