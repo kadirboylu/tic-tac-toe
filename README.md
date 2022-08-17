@@ -6,9 +6,9 @@ A Tic-Tac-Toe game built with React.
 
 I used:
 
-- React
-- Tailwind CSS and CSS Modules
-- React Context API
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/) and [CSS Modules](https://github.com/css-modules/css-modules)
+- [React Context API](https://reactjs.org/docs/context.html)
 
 Packages:
 
