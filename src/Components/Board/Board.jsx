@@ -4,6 +4,7 @@ import styles from "./Board.module.css";
 import ScoreBoard from "@components/ScoreBoard";
 import Square from "@components/Square";
 import GameInfo from "@components/GameInfo";
+import clsx from "clsx";
 
 // Game Winning Conditions
 const winConditions = [
@@ -51,17 +52,16 @@ const Board = () => {
   }, [board]);
 
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
-  const turnStyles = (() => {
-    return (
-      winner === null &&
-      (turn === "X" ? styles.turnX : turn === "O" ? styles.turnO : "")
-    );
-  })();
+  const turnStyles = {
+    [styles.turnX]: !winner && turn === "X",
+    [styles.turnO]: !winner && turn === "O",
+  };
 
   // if winner = X -> bg-color=red, if winner = O -> bg-color=blue else ""
-  const winnerStyles = (() => {
-    return winner?.player ? styles.win : winner?.result ? styles.draw : "";
-  })();
+  const winnerStyles = {
+    [styles.win]: winner?.player,
+    [styles.draw]: winner?.result,
+  };
 
   return (
     <GameContext.Provider
@@ -73,11 +73,10 @@ const Board = () => {
         winner,
         setWinner,
         score,
-        setScore,
       }}
     >
       <ScoreBoard />
-      <div className={`${styles.board} ${turnStyles} ${winnerStyles}`}>
+      <div className={clsx(styles.board, turnStyles, winnerStyles)}>
         {board.map((_, index) => {
           return <Square key={index} num={index} />;
         })}
