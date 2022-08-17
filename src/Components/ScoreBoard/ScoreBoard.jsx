@@ -1,5 +1,5 @@
 import React from "react";
-import { useGameContext } from "../../contexts/GameContext";
+import { useGameContext } from "../../contexts/GameContext/GameContext";
 import styles from "./ScoreBoard.module.css";
 
 const ScoreBoard = () => {

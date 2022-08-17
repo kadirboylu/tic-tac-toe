@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GameContext } from "../../contexts/GameContext";
+import { GameContext } from "../../contexts/GameContext/GameContext";
 import styles from "./Board.module.css";
 import ScoreBoard from "../ScoreBoard/ScoreBoard";
 import Square from "../Square/Square";
