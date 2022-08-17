@@ -1,10 +1,10 @@
-.square {
+.base {
   font-family: "Fredoka One", cursive;
 
   @apply w-20 h-20 text-3xl rounded-sm transition-colors duration-300 bg-zinc-50 font-bold text-red-500 flex items-center justify-center  cursor-pointer;
 }
 
-.square:hover {
+.base:hover {
   @apply bg-zinc-200;
 }
 

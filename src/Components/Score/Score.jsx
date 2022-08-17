@@ -19,7 +19,7 @@ const Score = () => {
   })();
 
   return (
-    <div className={`${styles.scores} ${winner?.draw && winnerStyles}`}>
+    <div className={`${styles.base} ${winner?.draw && winnerStyles}`}>
       <div
         className={`${styles.scoreX} ${styles.score} ${
           winner?.letter === "X" && winnerStyles

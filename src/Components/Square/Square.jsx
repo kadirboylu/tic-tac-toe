@@ -48,7 +48,7 @@ const Square = ({ num }) => {
 
   return (
     <div
-      className={`${styles.square} ${squareStyle()} ${winnerSquares()}`}
+      className={`${styles.base} ${squareStyle()} ${winnerSquares()}`}
       onClick={() => handleClick()}
     >
       {board[num]}

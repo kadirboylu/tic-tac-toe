@@ -1,4 +1,4 @@
-.info {
+.base {
   @apply w-[256px] h-[256px] rounded-sm bg-green-200 bg-opacity-70 text-center  text-black flex flex-col items-center justify-between px-2 py-12;
 }
 
@@ -6,18 +6,18 @@
   @apply bg-yellow-200 bg-opacity-70;
 }
 
-.info p {
+.base p {
   @apply text-2xl text-center;
 }
 
-.info button {
+.base button {
   @apply p-2 bg-green-600 transition-all duration-300 rounded-md text-white;
 }
 
-.info button:hover {
+.base button:hover {
   @apply bg-green-700;
 }
 
-.info button:active {
+.base button:active {
   @apply bg-green-800 translate-y-[1px];
 }
