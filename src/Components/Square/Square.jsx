@@ -1,5 +1,5 @@
 import React from "react";
-import { useGameContext } from "../../Contexts/GameContext";
+import { useGameContext } from "../../contexts/GameContext";
 import styles from "./Square.module.css";
 
 const Square = ({ num }) => {

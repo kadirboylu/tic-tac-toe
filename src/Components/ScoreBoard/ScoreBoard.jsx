@@ -1,8 +1,8 @@
 import React from "react";
-import { useGameContext } from "../../Contexts/GameContext";
-import styles from "./Score.module.css";
+import { useGameContext } from "../../contexts/GameContext";
+import styles from "./ScoreBoard.module.css";
 
-const Score = () => {
+const ScoreBoard = () => {
   const { turn, winner, scoreX, scoreO } = useGameContext();
 
   // if turn = X -> bg-color=red, if turn = O -> bg-color=blue else ""
@@ -38,4 +38,4 @@ const Score = () => {
   );
 };
 
-export default Score;
+export default ScoreBoard;

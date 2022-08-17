@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { GameContext } from "../../Contexts/GameContext";
+import { GameContext } from "../../contexts/GameContext";
 import styles from "./Board.module.css";
-import Scores from "../Score/Score";
+import ScoreBoard from "../ScoreBoard/ScoreBoard";
 import Square from "../Square/Square";
-import Info from "../Info/Info";
+import GameInfo from "../GameInfo/GameInfo";
 
 // Game Winning Conditions
 const winConditions = [
@@ -79,14 +79,14 @@ const Board = () => {
         setScoreO,
       }}
     >
-      <Scores />
+      <ScoreBoard />
       <div className={`${styles.board} ${turnStyles} ${winnerStyles}`}>
         {board.map((_, index) => {
           return <Square key={index} num={index} />;
         })}
         {winner && (
           <div className={styles.info}>
-            <Info />
+            <GameInfo />
           </div>
         )}
       </div>

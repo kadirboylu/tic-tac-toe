@@ -1,8 +1,8 @@
 import React from "react";
-import { useGameContext } from "../../Contexts/GameContext";
-import styles from "./Info.module.css";
+import { useGameContext } from "../../contexts/GameContext";
+import styles from "./GameInfo.module.css";
 
-const Info = () => {
+const GameInfo = () => {
   const { winner, setWinner, setBoard, setTurn } = useGameContext();
 
   // Game Reset
@@ -29,4 +29,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default GameInfo;
