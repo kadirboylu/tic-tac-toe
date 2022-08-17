@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { GameContext } from "@contexts/GameContext";
 import styles from "./Board.module.css";
+import clsx from "clsx";
 import ScoreBoard from "@components/ScoreBoard";
 import Square from "@components/Square";
 import GameInfo from "@components/GameInfo";
-import clsx from "clsx";
 
 // Game Winning Conditions
 const winConditions = [
