@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { GameContext } from "../../contexts/GameContext/GameContext";
+import { GameContext } from "@contexts/GameContext";
 import styles from "./Board.module.css";
-import ScoreBoard from "../ScoreBoard/ScoreBoard";
-import Square from "../Square/Square";
-import GameInfo from "../GameInfo/GameInfo";
+import ScoreBoard from "@components/ScoreBoard";
+import Square from "@components/Square";
+import GameInfo from "@components/GameInfo";
 
 // Game Winning Conditions
 const winConditions = [
