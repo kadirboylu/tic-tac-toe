@@ -24,7 +24,7 @@ A Tic-Tac-Toe game built with React.
 ### Install dependencies
 
 ```
-npm install
+npm install -f
 ```
 
 ### Run React dev server (http://localhost:3000)
