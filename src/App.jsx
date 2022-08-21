@@ -1,11 +1,12 @@
 import React from "react";
 import Board from "@components/Board";
+import { GameProvider } from "@contexts/GameContext";
 
 function App() {
   return (
-    <div>
+    <GameProvider>
       <Board />
-    </div>
+    </GameProvider>
   );
 }
 
